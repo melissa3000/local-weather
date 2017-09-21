@@ -32,7 +32,6 @@
     #name {
     width: 100%;
     height: 600px;
-    /*background-image: url("static/sunny.png");*/
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -104,7 +103,7 @@
 
 
       // select the correct background image based on the local weather
-      // if none found, defaults to generic image
+      // if none found, default to generic image
       if (weather === 'sunny') {
         image = weatherBackgrounds[0];
       } else if (weather === 'overcast') {
@@ -133,9 +132,7 @@
           $('#display-temp').html(farenheit + '°F');
         }
       });
-
     });
-
   }
 
 
@@ -153,6 +150,7 @@
     //     x.innerHTML = "Geolocation is not supported by this browser.";
     // }
 
+    //ToDo: Add error handling if user does not allow location to be known
 
     }
   }
@@ -162,12 +160,15 @@
 
   });
 
+  // ====================== Jasmine tests ==========================
+
+// To be added
+
+// ===================================================================
+
 </script>
 
-<!-- ToDo:
 
--fix non-responsive design - display box doesn't size correctly
--Jasmine testing -->
 
 <div class="container-fluid">
 
@@ -177,24 +178,30 @@
         <h1>Your Local Weather</h1>
       </div>
 
+      <div class="row">
       <div class="col-xs-offset-2 col-xs-8" id="overlay-box">
-        <div class="col-xs-offset-1 col-xs-1" id="display-temp">
+
+        <div class="row">
+        <div class="col-xs-offset-1 col-xs-11 col-md-1" id="display-temp">
           <h2>temp:</h2>
         </div>
-        <div class="col-xs-offset-1 col-xs-2" id="display-weather">
+        <div class="col-xs-offset-1 col-xs-11 col-md-2" id="display-weather">
           <h2>weather:</h2>
         </div>
-        <div class="col-xs-offset-1 col-xs-3" id="display-humidity">
+        <div class="col-xs-offset-1 col-xs-11 col-md-3" id="display-humidity">
           <h2>humidity:</h2>
         </div>
-        <div class="col-xs-2">
+        <div class="col-xs-offset-1 col-xs-11 col-md-2">
           <img id="display-icon" src="https://cdn.glitch.com/6e8889e5-7a72-48f0-a061-863548450de5%2F10n.png">
         </div>
+
+        </div>
+      </div>
 
       </div>
 
 
-      <div class="col-xs-offset-2 col-xs-2" id="overlay-box2">
+      <div class="col-xs-offset-2 col-xs-8 col-md-2" id="overlay-box2">
         <form action="">
           <input type="checkbox" id="Farenheit" value="Farenheit">Display temp in °F<br>
         </form>

@@ -35,7 +35,7 @@ def getWeatherPy():
     # convert response object to python dict
     # dict used to work with data, but not send over internet
     data = response.json()
-    pprint(data)
+    # pprint(data)
 
     weather = data['weather'][0]['description']
     icon = data['weather'][0]['icon']
