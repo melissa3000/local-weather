@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, g
+from flask import Flask, request, render_template
 from flask_debugtoolbar import DebugToolbarExtension
 import json, requests, os, urllib2
 from pprint import pprint
@@ -6,11 +6,7 @@ from pprint import pprint
 
 app = Flask(__name__)
 
-JS_TESTING_MODE = False
 
-@app.before_request
-def add_tests():
-    g.jasmine_tests = JS_TESTING_MODE
 
 # Required to use Flask sessions and the debug toolbar
 app.secret_key = "ABC"
@@ -53,7 +49,9 @@ def getWeatherPy():
     # as result on local server
     return json.dumps(results)
 
-
+@app.route("/error")
+def error():
+    raise Exception("Error!")
 
 
 if __name__ == "__main__":
@@ -64,9 +62,14 @@ if __name__ == "__main__":
     # Use the DebugToolbar
     # DebugToolbarExtension(app)
 
-    import sys
-    if sys.argv[-1] == "jstest":
-        JS_TESTING_MODE = True
+    # import sys
+    # if sys.argv[-1] == "jstest":
+    #     JS_TESTING_MODE = True
+
+    PORT = int(os.environ.get("PORT", 5000))
+    DEBUG = "NO_DEBUG" not in os.environ
+
+    app.run(host="0.0.0.0", port=PORT, debug=DEBUG)
 
 
     app.run(host="0.0.0.0")
