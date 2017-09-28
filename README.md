@@ -13,13 +13,13 @@ This single page app detects the user's current location and makes an API call t
 
 The background image and icon are both responsive to the current weather conditions.
 
-![alt text](/static/img/sunny_screenshot.png "App Screen Shot")
+![alt text](/static/sunny_screenshot.png "App Screen Shot")
 
-![alt text](/static/img/snowy_screenshot.png "App Screen Shot")
+![alt text](/static/snowy_screenshot.png "App Screen Shot")
 
-![alt text](/static/img/default_screenshot.png "App Screen Shot")
+![alt text](/static/default_screenshot.png "App Screen Shot")
 
-![alt text](/static/img/default2_screenshot.png "App Screen Shot")
+![alt text](/static/default2_screenshot.png "App Screen Shot")
 
 
 
