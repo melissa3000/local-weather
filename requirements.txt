@@ -5,7 +5,7 @@ Flask==0.10.1
 Flask-DebugToolbar==0.10.0
 idna==2.6
 itsdangerous==0.24
-Jinja2==2.7.3
+Jinja2==2.11.3
 MarkupSafe==0.23
 requests==2.18.4
 urllib3==1.22
